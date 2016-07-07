@@ -23,3 +23,4 @@ RUN apk add --no-cache --update python py-pip \
 	&& echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
 	&& apk add --update --no-cache gmp leveldb
 
+ENTRYPOINT [/usr/bin/pyethapp]
