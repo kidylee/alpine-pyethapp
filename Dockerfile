@@ -19,4 +19,7 @@ RUN apk add --no-cache --update python py-pip \
 		openssl-dev \
 	&& git clone https://github.com/ethereum/pyethapp . \
 	&& pip install pyethapp --no-cache-dir --editable . \
-	&& apk del .build-deps
+	&& apk del .build-deps \
+	&& echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+	&& apk add --update --no-cache gmp leveldb
+
